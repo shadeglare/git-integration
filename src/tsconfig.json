@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "outFile": "./../client/scripts/bundle.js",
+    "target": "esnext"
+  },
+  "files": [
+    "misc.ts",
+    "tag.ts",
+    "github.ts",
+    "main.ts"
+  ]
+}

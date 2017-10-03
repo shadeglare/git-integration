@@ -1,0 +1,1 @@
+node_modules/.bin/tsc -w -p src/tsconfig.json
