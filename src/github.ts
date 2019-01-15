@@ -4,7 +4,10 @@ class GitHubApi {
   public constructor(private token: string, private repository: string) { }
 
   public async getReference(ref: string): Promise<GitHubReference> {
-    let response = await fetch(`${this.baseUrl}${this.repository}/git/${ref}`);
+    let response = await fetch(`${this.baseUrl}${this.repository}/git/${ref}`, {
+      method: "GET",
+      headers: { Authorization: `token ${this.token}` }
+    });
     return await response.json();
   }
 
@@ -18,7 +21,10 @@ class GitHubApi {
   }
 
   public async getCommit(sha: string): Promise<GitHubCommit> {
-    let response = await fetch(`${this.baseUrl}${this.repository}/git/commits/${sha}`);
+    let response = await fetch(`${this.baseUrl}${this.repository}/git/commits/${sha}`, {
+      method: "GET",
+      headers: { Authorization: `token ${this.token}` }
+    });
     return await response.json();
   }
 
@@ -32,7 +38,10 @@ class GitHubApi {
   }
 
   public async getTree(sha: string): Promise<GitHubTree> {
-    let response = await fetch(`${this.baseUrl}${this.repository}/git/trees/${sha}`);
+    let response = await fetch(`${this.baseUrl}${this.repository}/git/trees/${sha}`, {
+      method: "GET",
+      headers: { Authorization: `token ${this.token}` }
+    });
     return await response.json();
   }
 
@@ -46,7 +55,10 @@ class GitHubApi {
   }
 
   public async getBlob(sha: string): Promise<GitHubBlob> {
-    let response = await fetch(`${this.baseUrl}${this.repository}/git/blobs/${sha}`);
+    let response = await fetch(`${this.baseUrl}${this.repository}/git/blobs/${sha}`, {
+      method: "GET",
+      headers: { Authorization: `token ${this.token}` }
+    });
     return await response.json();
   }
 
